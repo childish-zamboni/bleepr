@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "kailas-moon-tests",
+  "private_key_id": "75c39b265d6fcd19cb04899e9afd1913df4923bb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDJT/U9pfvqbuHz\nKcW7NvFNAdHKuuNd4T50Bx2aM5lj/OIHBVXZ/tW1LTyZuhufbuehM+dHN+EidkKm\n/mN1uXK9pomc2/8xb/qhrMOqJNYR8rqGBzPhPr+i0qdCYzzIlblJJJMKUMY4BWHi\nmoqGcUcCusNJb7Oa2DOdJDv4DydZk2K7Y9YW57dsWtKMrdnLp2TTsbyU/CkHSkBL\ny85KX9N0FCCemoH10d1MIQfyBMzGyu7iLAETsInkOyWOg+MxvJ8alyTifNrxGk9G\nEVjjPCHs0GpPtsT/Hwd2Q9v9VR9Vr64nhNh9YLE3ZzRWBb0CkYO7WuY3Ox112vls\n8yPH9OzZAgMBAAECggEAFtrxlFiyY5jIJVPCQ7GGrr/8ogAazS9D6GdgaH/gM9Zj\nkPl9mDzS5XlnzmovNaghOw+J++9vq3pyscPi5dwyly5/pCPj8qhsc4uKQVhiR3Jf\n09SggrudhS5WV/atUXaSLSguW3b1MioGRXRXMtFMhxZOEpnQcc2G+pnBBzYtOQGL\noTUoSg+07PDo0G3iue+pQVNlwBdFEfIN17P885NL7GVK/YAzdlQqAJUDN0Jold10\nxXwSU7+BovN3AN0oVSq4NIib/6w24WIPv4/sO67okmt8anmw5BLnB1VqbxK4A5QM\nKS5eIYyruoEx9MgdaKSj2OK+g8jlNSGfL38IZwM4CQKBgQDkORFThbXEhvW6eXMb\n89wDEfZKMnIvneknKx2bbpSVrcq+IV8YLWKpuddfOj5f4qlVZE7yGKBVqUHu7q6I\nOsoctdnITJv9jVT1h29mbPp9U+z3N1g0w8ut3rsO7IBpcboZhNUpSuIbrPq1nqum\nVE9RCweZk3wnvUasACdKqbpz9QKBgQDh0GoqGd/N4xQBwEB3Aau4s7BvJrBDTxav\nRJJx1kwtza0ziB12vGNJFYeu76EiX/mql/dRJnSSNm2pvIo48V8mz/2QDC1UuX8F\nA9FZTHcRMHsIOwexLxEdRQNHOcTl17VjL4/UolbEOVkXV+OjbY5OF63BxlycF3pM\nLqsP+jNq1QKBgCCoUeRjw8jljxAqBODBGoCN93JSmaharlxefRQa1MQ+ZD6kw9jP\n1ch3wWvtB7Ps2VJQ0kMuZvMbD0ZDfVIdJ4LIOuvAmqnDqZ6gzL4ZZha9BbGyh7q1\nMdYlgxr1mMJ99aVlLqOEBar0K8QFeoaIlfkA3QuK4T9GhHBkbTrv4rBpAoGBANKz\npIv6LqEu1Dk6CSzCC1hBmkxsfiWgA1uxETBVNCm883LU/CERcVb9Vuh9Qg4QHab3\nO1amGjlfvf2WJicx2YYepsslAZs/pmyofkvjlGoeoX4xjmDeuQplncR0++s21lJh\nS8StYWag2Cd247pXfGQTphbcHweqxHuXRBiZbiatAoGAAYLGw6HsgCJ2jf+Y/aVs\n5Wfhq2K+x+uQadALN3KRwP5GLQ3XSgMq20eeisz9F9PtOYoECuAcO+W5aNUz51g3\n9dvAJqXlq5qB7GhF+rwZtPCVMuB2aPJ4yiLfONH0YiAl0S1zftCB4MiTAH6KjNM+\nOqDn07XyLPMpYld36nkkm/k=\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-353@kailas-moon-tests.iam.gserviceaccount.com",
+  "client_id": "109700478325688980306",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-353%40kailas-moon-tests.iam.gserviceaccount.com"
+}
