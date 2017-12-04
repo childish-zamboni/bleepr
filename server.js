@@ -5,6 +5,7 @@ const record = require('node-record-lpcm16');
 const speech = require('@google-cloud/speech');
 const client = new speech.SpeechClient();
 
+let sentence = '';
 let prediction = [];
 let lastFour = '';
 let character = '';
@@ -12,9 +13,9 @@ let predictionString = '';
 let trainingData = [];
 const alphabet = ' abcdefghijklmnopqrstuvwxyz';
 
- const encoding = 'LINEAR16';
- const sampleRateHertz = 16000;
- const languageCode = 'en-US';
+const encoding = 'LINEAR16';
+const sampleRateHertz = 16000;
+const languageCode = 'en-US';
 
 const request = {
   config: {
@@ -22,7 +23,7 @@ const request = {
     sampleRateHertz: sampleRateHertz,
     languageCode: languageCode,
   },
-  interimResults: false, // If you want interim results, set this to true
+  interimResults: false,
 };
 
 let prepare = function (f) {
@@ -45,6 +46,8 @@ let prepare = function (f) {
 
   let kailas = function (e) {
 
+    sentence += e;
+
     for(let i = 0; i <e.length-1; i++) {
       trainingData.push({ input: prepare(e[i]), output: prepare(e[i+1]) });
     }
@@ -52,12 +55,15 @@ let prepare = function (f) {
 
     console.log(trainingData);
 
-    for(let i = 0; i < e.length; i++) {
-      let dump = network.activate(prepare(e[i]));
+    for(let i = 0; i < sentence.length-1; i++) {
+      let dump = network.activate(prepare(sentence[i]));
     }
-    prediction.push(network.activate(prepare(e[0])));
+
+    let temp =  sentence[sentence.length-1];
+    prediction.push(network.activate(prepare(temp)));
+
     for(let i = 0; i < 4; i++) {
-      prediction.push(network.activate(prepare(prediction[i])));
+      prediction.push(network.activate(prediction[prediction.length-1]));
     }
 
     round(prediction);
@@ -65,8 +71,9 @@ let prepare = function (f) {
     for (let i = 0; i < prediction.length; i++) {
     toSen(prediction[i]);
     }
+    console.log(e);
     console.log(predictionString);
-    if (predictionString === " duck" || predictionString === "duck ") {
+    if (predictionString === " duck") {
       console.log("BEEP!");
     }
 
@@ -74,7 +81,6 @@ let prepare = function (f) {
       for(let i = 4; i > 0; i--) {
       lastFour += e[(e.length-i)];
     }
-    console.log(e);
     if (lastFour === 'duck') {
       console.log("Training...");
 
@@ -88,6 +94,7 @@ let prepare = function (f) {
 
       trainingData = [];
       predictionString = '';
+      sentence = '';
       console.log("Ready!");
     }
 
@@ -121,7 +128,6 @@ const recognizeStream = client
       data.results[0] && data.results[0].alternatives[0]
         ? kailas(`${data.results[0].alternatives[0].transcript}`)
         : console.log(`\n\nReached transcription time limit\n`)
-
   );
 
 // Start recording and send the microphone input to the Speech API
@@ -129,9 +135,8 @@ record
   .start({
     sampleRateHertz: sampleRateHertz,
     threshold: 0,
-    // Other options, see https://www.npmjs.com/package/node-record-lpcm16#options
     verbose: false,
-    recordProgram: 'sox', // Try also "arecord" or "sox"
+    recordProgram: 'sox',
     silence: '10.0',
   })
   .on('error', console.error)
