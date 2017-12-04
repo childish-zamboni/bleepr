@@ -29,7 +29,7 @@ const request = {
 let prepare = function (f) {
   let arr = [];
 
-  for (let c = 0; c < alphabet.length; c ++) {
+  for (let c = 0; c < alphabet.length; c++) {
     if (f === alphabet[c]) {
       for(let c2 = 0; c2 < c; c2 ++) {
         arr.push(0);
@@ -59,8 +59,7 @@ let prepare = function (f) {
       let dump = network.activate(prepare(sentence[i]));
     }
 
-    let temp =  sentence[sentence.length-1];
-    prediction.push(network.activate(prepare(temp)));
+    prediction.push(network.activate(prepare(sentence[sentence.length-1])));
 
     for(let i = 0; i < 4; i++) {
       prediction.push(network.activate(prediction[prediction.length-1]));
