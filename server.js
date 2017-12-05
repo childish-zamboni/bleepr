@@ -53,7 +53,7 @@ const request = {
     toSen(prediction[i]);
     }
     console.log(e);
-    console.log("Prediction: " + predictionString);
+    console.log("Prediction:" + predictionString);
     if (predictionString === " duck") {
       console.log("BEEP!");
     }
