@@ -26,24 +26,6 @@ const request = {
   interimResults: false,
 };
 
-let prepare = function (f) {
-  let arr = [];
-
-  for (let c = 0; c < alphabet.length; c++) {
-    if (f === alphabet[c]) {
-      for(let c2 = 0; c2 < c; c2 ++) {
-        arr.push(0);
-      }
-      arr.push(1);
-      let k = arr.length;
-      for (let c3 = 0; c3 < alphabet.length-k; c3 ++) {
-        arr.push(0);
-      }
-    }
-  }
-  return arr;
-}
-
   let kailas = function (e) {
 
     sentence += e;
@@ -99,6 +81,24 @@ let prepare = function (f) {
 
     predictionString = '';
     prediction = [];
+  }
+
+  const prepare = function (f) {
+    let arr = [];
+
+    for (let c = 0; c < alphabet.length; c++) {
+      if (f === alphabet[c]) {
+        for(let c2 = 0; c2 < c; c2 ++) {
+          arr.push(0);
+        }
+        arr.push(1);
+        let k = arr.length;
+        for (let c3 = 0; c3 < alphabet.length-k; c3 ++) {
+          arr.push(0);
+        }
+      }
+    }
+    return arr;
   }
 
   const toSen = function (e) {
